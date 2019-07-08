@@ -1,0 +1,55 @@
+﻿@model IEnumerable<movieapplication.Models.Actor>
+
+@{
+    ViewBag.Title = "IndexActor";
+}
+
+<h2>IndexActor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateActor")
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Show Movie", "Index")
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Show Producer", "IndexProducer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.actorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.actorSex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.actorDOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.actorBio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.actorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.actorSex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.actorDOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.actorBio)
+        </td>
+        <td>
+            @Html.ActionLink("EditActor", "EditActor", new { id=item.actorId }) |
+            @Html.ActionLink("DetailsActor", "DetailsActor", new { id=item.actorId }) |
+            @Html.ActionLink("DeleteActor", "DeleteActor", new { id=item.actorId })
+        </td>
+    </tr>
+}
+
+</table>

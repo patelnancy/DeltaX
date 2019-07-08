@@ -1,0 +1,55 @@
+﻿@model IEnumerable<movieapplication.Models.Producer>
+
+@{
+    ViewBag.Title = "IndexProducer";
+}
+
+<h2>IndexProducer</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateProducer")
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Show Movie", "Index")
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Show Actor", "IndexActor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.producerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producerSex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producerDOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producerBio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.producerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.producerSex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.producerDOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.producerBio)
+        </td>
+        <td>
+            @Html.ActionLink("EditProducer", "EditProducer", new { id=item.producerId }) |
+            @Html.ActionLink("DetailsProducer", "DetailsProducer", new { id=item.producerId }) |
+            @Html.ActionLink("DeleteProducer", "DeleteProducer", new { id=item.producerId })
+        </td>
+    </tr>
+}
+
+</table>

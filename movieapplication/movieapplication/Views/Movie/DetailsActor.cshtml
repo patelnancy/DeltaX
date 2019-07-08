@@ -1,0 +1,50 @@
+﻿@model movieapplication.Models.Actor
+
+@{
+    ViewBag.Title = "DetailsActor";
+}
+
+<h2>DetailsActor</h2>
+
+<div>
+    <h4>Actor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.actorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.actorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.actorSex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.actorSex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.actorDOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.actorDOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.actorBio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.actorBio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("EditActor", "EditActor", new { id = Model.actorId }) |
+    @Html.ActionLink("Back to List", "IndexActor")
+</p>

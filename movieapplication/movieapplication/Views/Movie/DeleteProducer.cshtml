@@ -1,0 +1,56 @@
+﻿@model movieapplication.Models.Producer
+
+@{
+    ViewBag.Title = "DeleteProducer";
+}
+
+<h2>DeleteProducer</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Producer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.producerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producerSex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerSex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producerDOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerDOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producerBio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerBio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "IndexProducer")
+        </div>
+    }
+</div>

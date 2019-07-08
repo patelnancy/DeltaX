@@ -1,0 +1,66 @@
+﻿@model movieapplication.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.movieName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.movieName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.movieYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.movieYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.moviePlot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moviePlot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.moviePoster)
+        </dt>
+
+        <dd>
+          <img src="@Url.Content(Model.moviePoster)" width="150" height="150"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor.actorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producer.producerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.movieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

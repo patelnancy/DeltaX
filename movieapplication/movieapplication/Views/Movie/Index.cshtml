@@ -1,0 +1,71 @@
+﻿@model IEnumerable<movieapplication.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+
+<div style="font-size:17px;">
+      @Html.ActionLink("Create New", "Create")
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Show Actor", "IndexActor")
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Show Producer", "IndexProducer")
+ </div>
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.movieName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.movieYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.moviePlot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.moviePoster)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.movieName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.movieYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.moviePlot)
+        </td>
+        <td>
+            <img src="@Url.Content(item.moviePoster)" width="150" height="150" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actor.actorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producer.producerName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.movieId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.movieId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.movieId })
+        </td>
+    </tr>
+}
+
+</table>

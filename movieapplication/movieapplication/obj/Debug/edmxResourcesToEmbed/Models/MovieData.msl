@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="MovieContext">
+    <EntitySetMapping Name="Actors">
+      <EntityTypeMapping TypeName="Models.Actor">
+        <MappingFragment StoreEntitySet="Actor">
+          <ScalarProperty Name="actorId" ColumnName="actorId" />
+          <ScalarProperty Name="actorName" ColumnName="actorName" />
+          <ScalarProperty Name="actorSex" ColumnName="actorSex" />
+          <ScalarProperty Name="actorDOB" ColumnName="actorDOB" />
+          <ScalarProperty Name="actorBio" ColumnName="actorBio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="Models.Movie">
+        <MappingFragment StoreEntitySet="Movie">
+          <ScalarProperty Name="movieId" ColumnName="movieId" />
+          <ScalarProperty Name="movieName" ColumnName="movieName" />
+          <ScalarProperty Name="movieYear" ColumnName="movieYear" />
+          <ScalarProperty Name="moviePlot" ColumnName="moviePlot" />
+          <ScalarProperty Name="moviePoster" ColumnName="moviePoster" />
+          <ScalarProperty Name="actorId" ColumnName="actorId" />
+          <ScalarProperty Name="producerId" ColumnName="producerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producers">
+      <EntityTypeMapping TypeName="Models.Producer">
+        <MappingFragment StoreEntitySet="Producer">
+          <ScalarProperty Name="producerId" ColumnName="producerId" />
+          <ScalarProperty Name="producerName" ColumnName="producerName" />
+          <ScalarProperty Name="producerSex" ColumnName="producerSex" />
+          <ScalarProperty Name="producerDOB" ColumnName="producerDOB" />
+          <ScalarProperty Name="producerBio" ColumnName="producerBio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
